@@ -45,9 +45,13 @@ setTimeout(() => {
 
 
     <title>Document</title>
+    <style>
+      
+
+      </style>
 </head>
-<body style="background-color: #8fc4b7;">
-<section class="h-100 h-custom" style="background-color: #8fc4b7;">
+<body>
+<section class="h-100 h-custom">
   <div class="container py-5 h-100">
       
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -55,7 +59,7 @@ setTimeout(() => {
         <div class="card rounded-3">
          
           <div class="card-body p-4 p-md-5">
-            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Create New User</h3>
 
             <form class="px-md-2" action="" method="post">
 
@@ -84,11 +88,14 @@ setTimeout(() => {
                 <label class="form-label"  for="form3Example1q">age</label>
               </div>
               <div class="form-outline mb-4">
-                <input type="text" id="form3Example1q" name="gender" class="form-control" />
+                    <select name="gender" >
+  <option value="male">Male</option>
+  <option value="female">Female</option>
+</select>
                 <label class="form-label"  for="form3Example1q">gender</label>
               </div>
               
-              <input type="submit" value="Submit" name="submit" class="btn btn-success btn-lg mb-1">
+              <input type="submit" value="Submit" name="submit" style="  background-color: #570A57;" class="btn btn-success btn-lg mb-1">
 
             </form>
             

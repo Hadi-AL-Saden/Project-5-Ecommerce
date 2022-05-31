@@ -3,10 +3,16 @@
     margin: 50px auto;
     border: 1px solid #d8d8d8;
 }
-
+.table thead th,
+.table tr td{
+    vertical-align: middle
+}
 .deleteInput{
     background-color: white;
     border: none;
+}
+.fa-trash-can{
+    font-size: 25px;
 }
 .fa-xmark{
     border: 1px solid #adacac;
@@ -18,6 +24,28 @@
     position: relative;
     float: right;
     margin-right: 50px;
+}
+.cart_btn
+{
+    background-color: #570A57;
+    border-color: #570A57;
+    color: white;
+    cursor: pointer;
+    padding: 8px 15px;
+}
+.cart_btn:hover{
+    background-color: #570A57;
+}
+.updateInput{
+    width: 50%;
+    text-align: center;
+}
+a:hover{
+    text-decoration: none;
+}
+.cart_icon
+{
+    color: #570A57;
 }
 @media (max-width:620px){
     .card{

@@ -19,15 +19,20 @@
               <div class="position-sticky">
                 <div class="list-group list-group-flush mx-3 mt-4">
                   <a href="user_dashboard.php" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
-                    <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>User dashboard</span>
+                    <i class="fas fa-tachometer-alt fa-fw me-3 "></i><span>User dashboard</span>
                   </a>
                   <a href="product_dashboard.php" class="list-group-item list-group-item-action py-2 ripple ">
-                    <i class="fas fa-chart-area fa-fw me-3"></i><span>product dashboard</span>
+                    <i class="fas fa-chart-area fa-fw me-3 "></i><span>product dashboard</span>
                   </a>
+                 
+                  <a href="category_dashboard.php" class="list-group-item list-group-item-action py-2 ripple"><i
+                      class="fas fa-lock fa-fw me-3 "></i><span>Catagory dashboard</span></a>
+                      </a>
+                      <a href="sales_dashboard.php" class="list-group-item list-group-item-action py-2 ripple "><i class="fa-solid fa-coins fa-fw me-3"></i>
+                </i><span>Sales dashboard</span></a>
 
-                      class="fas fa-lock fa-fw me-3"></i><span>Catagory dashboard</span></a> -->
+                      <a href="admin_dashboard.php" class="list-group-item list-group-item-action py-2 ripple"><i class="fa-solid fa-screwdriver fa-fw me-3"></i><span> Admin dashboard</span></a>
                   
-
                 </div>
               </div>
             </nav>
@@ -60,7 +65,7 @@
 
                   <!-- Avatar -->
                  
-                    <a class="nav-link avatar_logout hidden-arrow d-flex align-items-center" href="../loginPage/login.php"
+                    <a class="nav-link avatar_logout hidden-arrow d-flex align-items-center" href="../index.php"
                       id="navbarDropdownMenuLink" role="button"  aria-expanded="false">
                       <img src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" class="rounded-circle"
                         height="22" alt="Avatar" loading="lazy" /> 

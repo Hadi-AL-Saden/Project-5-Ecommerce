@@ -55,7 +55,7 @@ if(isset($_POST['submit']))
     <title>Document</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar_single_product">
+<!-- <nav class="navbar navbar-expand-lg navbar_single_product">
         <div class="container navbar_single_product">
 
 
@@ -100,10 +100,10 @@ if(isset($_POST['submit']))
                 </ul>
                 <form action="" method="post">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-                    <!-- profile icon/login/register -->
+                    profile icon/login/register -->
                     
                 <?php
-                          $check=0;
+                        /*  $check=0;
                           if(isset($_SESSION["userID"])){
                                $profile_icon= '
                                <a class="nav-link" href="../profile_page/user_profile.php">
@@ -144,15 +144,15 @@ if(isset($_POST['submit']))
                        <?php if(isset( $profile_icon)){echo $profile_icon;}?>
                     </li>
                     <li class="nav-item">
-                    <?php if(isset( $cart)){echo $cart;}?>
+                    <?php if(isset( $cart)){echo $cart;}*/?>
 
-                    </li>
+                    <!-- </li>
                 </ul>
                 </form>
 
             </div>
         </div>
-    </nav>
+    </nav> -->
     
   
     <a href="./user_profile.php"></a>

@@ -2,14 +2,13 @@
 include "../connection.php";
 
 if (isset($_POST['submit'])){
-$category_name = $_POST["category_name"];
+$email = $_POST["email"];
 
-
-$add_category = "INSERT INTO category (category_name) VALUES ('$category_name');";
-if ($conn->query($add_category) === TRUE) {
-    echo "New product created successfully";
+$add_admin = "INSERT INTO user_admin (email) VALUES ('$email');";
+if ($conn->query($add_admin) === TRUE) {
+    echo "New admin created successfully";
   } else {
-    echo "Error: " . $add_category . "<br>" . $conn->error;
+    echo "Error: " . $add_admin . "<br>" . $conn->error;
   }
 
 echo "<br>";
@@ -19,7 +18,7 @@ Employee was added successfully redircting you to the main page</div>';
 
 echo'<script>
 setTimeout(() => {
-    window.location = "category_dashboard.php";
+    window.location = "admin_dashboard.php";
   }, "2000")
 
 </script>';
@@ -51,13 +50,13 @@ setTimeout(() => {
             
          
           <div class="card-body p-4 p-md-5">
-            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Add category</h3>
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Add admin</h3>
 
             <form class="px-md-2" action="" method="post">
 
               <div class="form-outline mb-4">
-                <input type="text" id="form3Example1q" name="category_name" class="form-control" />
-                <label class="form-label"  for="form3Example1q">category name </label>
+                <input type="text" id="form3Example1q" name="email" class="form-control" />
+                <label class="form-label"  for="form3Example1q">Admin email </label>
               </div>
               
               

@@ -34,7 +34,6 @@ if($result_check4 > 0){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,11 +45,12 @@ if($result_check4 > 0){
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="./css/footer.css">
+ 
 
     <script src="https://kit.fontawesome.com/f32d43040b.js" crossorigin="anonymous"></script>
 
-
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/style.css">
 
 
     <title>Document</title>
@@ -62,7 +62,7 @@ if($result_check4 > 0){
         <div class="container">
 
 
-            <a class="navbar-brand" href="#"><img src="./img/projectimg/Lecia-logo.png" width="125px" height="auto"alt=""></a>
+            <a class="navbar-brand" href="#"><img src="./img/projectimg/Lecia-logo.png" width="150px" height="auto"  alt=""></a>
 
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -75,23 +75,10 @@ if($result_check4 > 0){
                     <li class="nav-item">
                         <a class="nav-link active" href="index.php">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./about us/about_us.php"> About us</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link " href="#footer">
-                            Contact us
-                        </a>
-
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link " href="#discount">Our discount</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            CATEGORIES
+                            SHOP
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="./ProductsPage/Dress.php">Dress</a></li>
@@ -102,7 +89,18 @@ if($result_check4 > 0){
 
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#discount">Our discount</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about us/about_us.php"> About us</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="#footer">
+                            Contact us
+                        </a>
 
+                    </li>
                 </ul>
                 <form action="" method="post">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
@@ -123,13 +121,13 @@ if($result_check4 > 0){
                                $cart='
                                <a class="nav-link" href="./cart.php">
                                <i class="fa-solid fa-cart-shopping"></i>
-                                 </a>'
+                                 </a>';
                                
                                
                                ?>
                         <form action="" method='post'>
                             <li class="nav_item"><input class="nav-link" type="submit" name="logout" value=" Logout "
-                                    style="border:none; background-color: white;">
+                                    style="border:none; background-color: white; cursor:pointer">
                             </li>
                         </form>
 
@@ -189,6 +187,8 @@ if($result_check4 > 0){
     </section>
     <!-- =================================================== -->
 
+
+
     <section class="benefit my-5 pd-5">
         <div class="container mt-5 py-5">
             <div class="text-center">
@@ -197,21 +197,6 @@ if($result_check4 > 0){
         height: 2px;
         background-color: #c20f1e95;">
             </div>
-
-
- <section class="benefit">
-    <div class="container"  >
-    <h1 class="text-center">OUR FEATUERS</h1>
-        <div class="row benefit_row">
-        
-            <div class="col-lg-3 benefit_col">
-                <div class="benefit_item d-flex flex-row align-item-center">
-                    <div class="benefit_icon">
-                        <i class="fa-solid fa-truck" aria-hidden="true"></i>
-                    </div>
-                    <div class="benefit_content">
-                        <h6>
-                            Free Shiping
 
             <div class="row benefit_row pt-4" style="background-color:rgba(0, 0, 0, 0.578)">
 
@@ -281,7 +266,6 @@ if($result_check4 > 0){
         </div>
 
     </section>
-
     <!-- ================================================= -->
     <section class="banner" style="margin-top:5% ;">
         <div class="container">
@@ -299,8 +283,8 @@ if($result_check4 > 0){
             <div class="row">
                 <div class="col-md-4">
                     <div class="banner_item " style="background-image:url('./img/projectimg/cate\ 1.jpg') ;">
-                        <div class="banner_category">
-                            <a href="./ProductsPage/Dress.php">DRESSES</a>
+                        <div>
+                            <a href="./ProductsPage/Dress.php" class="banner_category">DRESSES</a>
                         </div>
                     </div>
                 </div>
@@ -308,8 +292,8 @@ if($result_check4 > 0){
                 <div class="col-md-4">
                     <div class="banner_item align-item-center"
                         style="background-image:url(./img/projectimg/cate\ 2.jpg) ;">
-                        <div class="banner_category">
-                            <a href="./ProductsPage/Suit.php">Suits</a>
+                        <div>
+                            <a href="./ProductsPage/Suit.php" class="banner_category">Suits</a>
                         </div>
                     </div>
                 </div>
@@ -317,17 +301,13 @@ if($result_check4 > 0){
                 <div class="col-md-4">
                     <div class="banner_item align-item-center"
                         style="background-image:url('./img/projectimg/cate\ 5.jpg') ;">
-                        <div class="banner_category">
-                            <a href="./ProductsPage/Accessories.php">Accessories</a>
+                        <div>
+                            <a href="./ProductsPage/Accessories.php" class="banner_category">Accessories</a>
                         </div>
                     </div>
                 </div>
 
             </div>
-
-
-
-
         </div>
         </div>
     </section>
@@ -337,8 +317,8 @@ if($result_check4 > 0){
                 <div class="col-md-6 m-auto">
                     <div class="banner_item flex-row align-item-center"
                         style="background-image:url('./img/projectimg/cate\ 3.jpg') ;">
-                        <div class="banner_category">
-                            <a href="./ProductsPage/Women_shoes.php">WOMEN's SHOSE</a>
+                        <div>
+                            <a href="./ProductsPage/Women_shoes.php" class="banner_category">WOMEN's SHOSE</a>
                         </div>
                     </div>
                 </div>
@@ -346,8 +326,8 @@ if($result_check4 > 0){
                 <div class="col-md-6">
                     <div class="banner_item flex-row align-item-center"
                         style="background-image:url(./img/projectimg/cate\ 4.jpg) ;">
-                        <div class="banner_category">
-                            <a href="./ProductsPage/Men_shoes.php">MEN's SHOES</a>
+                        <div>
+                            <a href="./ProductsPage/Men_shoes.php" class="banner_category" >MEN's SHOES</a>
                         </div>
                     </div>
                 </div>
@@ -357,8 +337,6 @@ if($result_check4 > 0){
         
 
             </div>
-
-
 
 
         </div>
@@ -371,10 +349,7 @@ if($result_check4 > 0){
             <div class="row py-5 ">
                 <div class="col-lg-5 m-auto text-center">
                     <h1>COLLECTION 2022</h1>
-                    <h6 style="color: #c20f1e95;">SPRING / SUMMER </h6>
-                    <hr class="mx-auto mb-5 line" style="width: 30px;
-                    height: 2px;
-                    background-color: #c20f1e95;">
+                    <h6 style="color: red;">SPRING / SUMMER </h6>
                 </div>
 
             </div>
@@ -383,66 +358,61 @@ if($result_check4 > 0){
                 <div class="col-lg-3 text-center m-auto ">
                     <div class="card border-0 bg-light mb-2">
                         <div class="card-body">
-                            <a href=""><img src="./img/DRESS/dress 2-1.PNG" class="img-fluid " alt=""></a>
+                            <a href="singleProduct.php?id=4"><img src="img/DRESS/dress 4-1.PNG" height="310px" width="215px" alt=""></a>
                         </div>
                     </div>
-                    <h6>BLACK STRAPLESS BEAD EMBROIDERED LONG DRESS</h6>
-                    <p>$7,350</p>
+                    <h6><br>LONG BEAD EMBROIDERED RUFFLED DRESS</h6>
+                    <p>17100.00</p>
 
                 </div>
                 <div class="col-lg-3 text-center m-auto ">
                     <div class="card border-0 bg-light mb-2">
                         <div class="card-body">
-                            <a href=""><img src="./img/DRESS/dress 3-1.PNG" class="img-fluid " alt=""></a>
+                            <a href="singleProduct.php?id=7"><img src="./img/DRESS/dress 7-1.PNG" class="img-fluid " alt=""></a>
                         </div>
                     </div>
-                    <h6>ONE SHOULDER ELECTRIC-BLUE DRESS</h6>
-                    <p>$5,150</p>
+                    <h6>
+                        <br>ONE SHOULDER ELECTRIC-BLUE DRESS</h6>
+                    <p>5,150 JOD</p>
 
                 </div>
                 <div class="col-lg-3 text-center m-auto ">
                     <div class="card border-0 bg-light mb-2">
                         <div class="card-body">
-                            <a href=""><img src="./img/DRESS/dress 6-1.PNG" class="img-fluid " alt=""></a>
+                            <a href="singleProduct.php?id=6"><img src="./img/DRESS/dress 6-1.PNG" class="img-fluid " alt=""></a>
                         </div>
                     </div>
-                    <h6>STRAPLESS EMBROIDERED AND SILK LONG DRESS</h6>
-                    <p>$6,350</p>
+                    <h6>
+                        <br>
+                    STRAPLESS EMBROIDERED AND SILK LONG DRESS</h6>
+                    <p>6,350 JOD</p>
 
                 </div>
                 <div class="col-lg-3 text-center m-auto ">
                     <div class="card border-0 bg-light mb-2">
                         <div class="card-body">
-                            <a href=""><img src="./img/DRESS/dress 5-1.PNG" class="img-fluid " alt=""></a>
+                           <a href="singleProduct.php?id=5"><img src="./img/DRESS/dress 5-1.PNG" class="img-fluid " alt=""></a> 
                         </div>
                     </div>
-                    <h6>MULTICOLOR EMBROIDERED LONG DRESS</h6>
-                    <p>$8,770</p>
+                    <h6>
+                    <br>    
+                    MULTICOLOR EMBROIDERED LONG DRESS
+                </h6>
+                    <p>8,770 JOD</p>
 
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6 text-center m-auto ">
-                    <a href="./ProductsPage/Dress.php"><button class="btn1">
-                            Click for more
-                        </button></a>
-
-                </div>
-            </div>
-
-        
+                    <a href="./ProductsPage/Dress.php"><button class="btn1" style="cursor:pointer;">
+                        Click for more
+                    </button></a>
 
 
 
     </section>
 
-
-
-
-
     <!-- ================================================ -->
-
-
 
     <section class="about">
         <div class="container py-5">
@@ -490,39 +460,6 @@ if($result_check4 > 0){
             </div>
         </div>
     </section>
-    <!-- ============================================= -->
-    <!-- <section class="category">
-        <div class="container-fluied py-5">
-            <div class="row pt-5" style="background-color: black;">
-                <div class="col-lg-7 m-auto">
-                    <div class="row text-center m-auto "  >
-                        <div class="col-lg-2  px-5" id="img1" style="margin-bottom: 5%; margin-right: 7%;">
-                       
-                            <img src="./img/projectimg/cat1.jpg" class="img-fluid" alt="">
-                            <h4>Lorem ipsum dolor sit amet, </h4>
-                            <p>Lorem ipsum</p>
-
-                        </div>
-                     
-                        <div class="col-lg-2 px-5" id="img2" style="margin-bottom: 5%;margin-right: 7%;">
-                            <img src="./img/projectimg/cat1.jpg" class="img-fluid" alt=""> 
-
-                        </div>
-                      
-                        <div class="col-lg-2 px-5" id="img3" style="margin-bottom: 5%;margin-right: 7%;">
-                            <img src="./img/projectimg/cat1.jpg" class="img-fluid" alt="">
-
-                        </div>
-                       
-                        <div class="col-lg-2 px-5" id="img4" style="margin-bottom: 5%;margin-right: 7%;">
-                        
-                            <img src="./img/projectimg/cat1.jpg" class="img-fluid" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
     <!-- ==================================================== -->
     <section class="product" style="margin-top: -5%; margin-bottom: 10%;">
         <div class="container py-5">
@@ -541,110 +478,101 @@ if($result_check4 > 0){
                 <div class="col-lg-3 text-center m-auto ">
                     <div class="card border-0 bg-light mb-2">
                         <div class="card-body">
-                            <a href=""><img src="./img/SUIT/suit 6-1.PNG" class="img-fluid " alt=""></a>
+                            <a href="singleProduct.php?id=23"><img src="./img/SUIT/suit 6-1.PNG" class="img-fluid " alt=""></a>
                         </div>
                     </div>
-                    <h6>EXTRA-SLIM-FIT VIRGIN-WOOL SUIT WITH MICRO PATTERN</h6>
-                    <p style="text-decoration: line-through ;">$1,195 </p><span>$956.00</span>
+                    <h6>
+                        <br>
+                        EXTRA-SLIM-FIT VIRGIN-WOOL SUIT WITH MICRO PATTERN
+                    </h6>
+                    <p style="text-decoration: line-through ;">1,434 JOD </p><span>1,195 JOD</span>
 
                 </div>
                 <div class="col-lg-3 text-center m-auto ">
                     <div class="card border-0 bg-light mb-2">
                         <div class="card-body">
-                            <a href=""><img src="./img/DRESS/R dress 3-1.PNG" class="img-fluid " alt=""></a>
+                            <a href="singleProduct.php?id=14"><img src="./img/DRESS/R dress 3-1.PNG" class="img-fluid " alt=""></a>
                         </div>
                     </div>
-                    <h6>DESIGNER ORANGE TULLE VOLUME DRESS</h6>
-                    <p style="text-decoration: line-through ;">$7,668</p>
-                    <p>$6,134</p>
+                    <h6>
+                        <br>
+                        DESIGNER ORANGE TULLE VOLUME DRESS
+                    </h6>
+                    <p style="text-decoration: line-through ;">9,201 JOD</p>
+                    <p>7,668 JOD</p>
 
                 </div>
                 <div class="col-lg-3 text-center m-auto ">
                     <div class="card border-0 bg-light mb-2">
                         <div class="card-body">
-                            <a href=""><img src="./img/SUIT/suit 8-1.png" class="img-fluid " alt=""></a>
+                            <a href="singleProduct.php?id=25"><img src="./img/SUIT/suit 8-1.png" class="img-fluid " alt=""></a>
                         </div>
                     </div>
-                    <h6>EXTRA-SLIM-FIT SUIT IN PATTERNED STRETCH WOOL</h6>
-                    <p style="text-decoration: line-through ;">$1,295</p>
-                    <p>$1,036</p>
+                    <h6>
+                    <br>    
+                    EXTRA-SLIM-FIT SUIT IN PATTERNED STRETCH WOOL
+                </h6>
+                    <p style="text-decoration: line-through ;">1,554  JOD</p>
+                    <p>1,295 JOD</p>
 
                 </div>
                 <div class="col-lg-3 text-center m-auto ">
                     <div class="card border-0 bg-light mb-2">
                         <div class="card-body">
-                            <a href=""><img src="./img/DRESS/R dress 1-1.PNG" class="img-fluid " alt=""></a>
+                            <a href="singleProduct.php?id=12"><img src="./img/DRESS/R dress 1-1.PNG" class="img-fluid " alt=""></a>
                         </div>
                     </div>
-                    <h6>HANDCRAFTED FEATHERED & BEADED TUBINO PARTY DRESS</h6>
-                    <p style="text-decoration: line-through ;">$6,366</p>
-                    <p>$5,092</p>
+                    <h6>
+                        <br>
+                        HANDCRAFTED FEATHERED & BEADED TUBINO PARTY DRESS
+                    </h6>
+                    <p style="text-decoration: line-through ;">7,639 JOD</p>
+                    <p>6,366 JOD</p>
 
                 </div>
             </div>
-            <!-- <div class="row">
-                <div class="col-lg-6 text-center m-auto ">
-                    <button class="btn1">
-                        Click for more
-                    </button>
-                </div>
-            </div> -->
         </div>
     </section>
-
-
-
     <!-- ============================================ -->
-    <div class="clearfix">
-        <div class="footer-clean">
-
-            <footer id="footer">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-sm-4 col-md-3 item">
-                            <h3>Our Team</h3>
-                            <ul>
-                                <li><a href="#">
-                                        <h6>Ibrahim</h6>
-                                    </a></li>
-                                <li><a href="#">
-                                        <h6>Raghad</h6>
-                                    </a></li>
-                                <li><a href="#">
-                                        <h6>Hadi</h6>
-                                    </a></li>
-                                <li><a href="#">
-                                        <h6>Aya</h6>
-                                    </a></li>
-
-                            </ul>
-                        </div>
-                        <div class="col-sm-4 col-md-3 item">
-                            <h3 id="contact">Contact</h3>
-                            <ul>
-                                <li><a href="#"></a></li>
-                                <li><a href="#">Team</a></li>
-                                <li><a href="#">Legacy</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-4 col-md-3 item">
-                            <h3>Careers</h3>
-                            <ul>
-                                <li><a href="#">Job openings</a></li>
-                                <li><a href="#">Employee success</a></li>
-                                <li><a href="#">Benefits</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a
-                                href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i
-                                    class="icon ion-social-snapchat"></i></a><a href="#"><i
-                                    class="icon ion-social-instagram"></i></a>
-                            <p class="copyright">Company Name © 2018</p>
-                        </div>
+    <div class="clearfix"></div>
+    <div class="footer-clean" style="margin-top: 70px;" >
+        <footer id="footer">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Our Team</h3>
+                        <ul>
+                            <li><a href="#"> <h6>Ibrahim</h6> </a></li>
+                            <li><a href="#"> <h6>Raghad</h6> </a></li>
+                            <li><a href="#"> <h6>Hadi</h6> </a></li>
+                            <li><a href="#"> <h6>Aya</h6> </a></li>
+                          
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3 id="contact">Contact US</h3>
+                        <ul>
+                            <li><a href="https://Ibrahim Al tameme@gmail.com">Ibrahim Al tameme@gmail.com</a></li>
+                            <li><a href="https://raghad.karasneh@gmail.com">raghad.karasneh@gmail.com</a></li>
+                            <li><a href="hadialsaden@gmail.com">hadialsaden@gmail.com</a></li>
+                            <li><a href="https://ayaalsawa279@gmail.com">ayaalsawa279@gmail.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        
+                        <h3 style="text-align:center;">STYLE IS A WAY TO SAY WHO YOU ARE WITHOUT HAVING TO SPEAK</h3>
+                        
+                    </div>
+                    <div class="col-lg-3 item social">
+                        <a href="https://web.facebook.com/eliesaabworld/?_rdc=1&_rdr" target="_blank"><i class="icon ion-social-facebook"></i></a>
+                        <a href="https://twitter.com/ElieSaabWorld?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="icon ion-social-twitter"></i></a>
+                        <a href="https://www.snapchat.com/add/eliesaablive" target="_blank"><i class="icon ion-social-snapchat"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/?next=/eliesaabworld/" target="_blank"><i class="icon ion-social-instagram"></i></a>
+                        <p class="copyright">Company Name Â© 2022</p>
                     </div>
                 </div>
-            </footer>
-        </div>
+            </div>
+        </footer>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

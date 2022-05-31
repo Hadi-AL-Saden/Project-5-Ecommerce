@@ -6,9 +6,13 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     
     $sql = "UPDATE products SET is_deleted=1 WHERE product_id = '$_GET[id]';";
     $conn->query($sql);
-    header("Location:./product_dashboard.php");
 
-    header("Location:./product_dashboard.php");
+    echo'<script>
+setTimeout(() => {
+    window.location = "product_dashboard.php";
+  }, "2000")
+
+</script>';
 
 
 }

@@ -88,11 +88,13 @@
 }
 
 .banner_category{
-    height: 50px;
-    background: #ffffff;
+    height: 60px;
+    color: white;;
     min-width: 180px;
     padding-left: 25px;
     padding-right: 25px;
+    border: 7px solid white;
+    padding: 20px 55px;
 }
 
 
@@ -105,10 +107,15 @@
     text-align: center;
     line-height: 50px;
     width: 100%;
+    transition: .5s all ease-in-out;
+    text-decoration: none;
+
 }
 
-.banner_category a:hover{
-    color: #b5aec4;
+.banner_category:hover{
+background-color: white;
+    color: black;
+    transition: .5s all ease-in-out;
 }
 
 
@@ -142,10 +149,9 @@ h1{
   
 }
 
-.card:hover{
-    box-shadow: -2px 1px 25px -4px rgba(0,0,0,0.75);
+.card{
+    box-shadow: -2px 1px 25px -4px rgba(0,0,0,0.75) !important;
     transition: 0.5s;
-
 }
 
 
@@ -169,8 +175,8 @@ h3 i {
 }
 
 .benefit_col{
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .benefit_item {
@@ -237,4 +243,46 @@ footer
 
 .benefit h1{
     display: block;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.navbar-toggler-icon{
+    color: black;
+    border: solid black 1px;
+}
+.navbar-brand{
+
+    font-size: 2rem;
+    color: black;
+    font-family: 'Lobster', cursive;
+}
+
+.navbar-brand:hover{
+    color: black;
+}
+
+.nav-link{
+    margin-right: 10px;
+    margin-left: 10px;
+    color: black;
+    text-transform: uppercase;
+    font-family: 'Rubik', sans-serif;
+}
+
+.nav-link:hover{
+    color: black;
+}
+.navbar .container{
+    margin-top:30px
+}
+.m-auto button{
+    margin: 40px auto!important;
+}
+p{
+    margin-bottom: 0!important;
 }

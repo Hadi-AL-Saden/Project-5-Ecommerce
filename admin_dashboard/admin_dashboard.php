@@ -17,12 +17,11 @@ include "../connection.php";
     <title>Document</title>
     <link rel="stylesheet" href="user_dashboard.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="dashboard.css?v=<?php echo time(); ?>">
-    
 </head>
 <body>
-  <!--           nav --> 
+ <!--           nav --> 
   
-<header  >
+ <header  >
             <!-- Sidebar -->
             <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
               <div class="position-sticky">
@@ -33,10 +32,9 @@ include "../connection.php";
                   <a href="product_dashboard.php" class="list-group-item list-group-item-action py-2 ripple ">
                     <i class="fas fa-chart-area fa-fw me-3"></i><span>product dashboard</span>
                   </a>
-                  <a href="category_dashboard.php" class="list-group-item list-group-item-action py-2 ripple"><i
-                      class="fas fa-lock fa-fw me-3"></i><span>Catagory dashboard</span></a>
+                  <a href="category_dashboard.php" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-lock fa-fw me-3"></i><span>Catagory dashboard</span></a>
                       </a>
-                  <a href="sales_dashboard.php" class="list-group-item list-group-item-action py-2 ripple"><i class="fa-solid fa-coins fa-fw me-3"></i>
+                      <a href="category_dashboard.php" class="list-group-item list-group-item-action py-2 ripple "><i class="fa-solid fa-coins fa-fw me-3"></i>
                 </i><span>Sales dashboard</span></a>
                       <a href="admin_dashboard.php" class="list-group-item list-group-item-action py-2 ripple"><i class="fa-solid fa-screwdriver fa-fw me-3"></i><span> Admin dashboard</span></a>
                   
@@ -96,20 +94,14 @@ include "../connection.php";
   <br>
 <!--         nav --> 
 <div class="dbcontainer" >
-<button type="button" class="btn butt btn-sunny  text-uppercase"><a class="a_button_create" href="user_create.php">Create new user</a></button>
+<button type="button" class="btn butt btn-sunny  text-uppercase"><a class="a_button_create" href="admin_create.php">create new admin</a></button>
 
 
 <table class="table container table-bordered table-dark">
   <thead>
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">first name</th>
-      <th scope="col">last name</th>
-      <th scope="col">email</th>
-      <th scope="col">phone number</th>
-      <th scope="col">user password</th>
-      <th scope="col">age</th>
-      <th scope="col">gender</th>
+      <th scope="col">admin id</th>
+      <th scope="col">admin name</th>
       <th scope="col">edit</th>
     </tr>
 
@@ -117,32 +109,25 @@ include "../connection.php";
   <tbody class="table-light">
     <?php
     
-    $stmt = $conn->query("SELECT * FROM user ");
-    while($user = $stmt->fetch_assoc())
+    $stmt = $conn->query("SELECT * FROM user_admin");
+   
+
+   
+    while($admin = $stmt->fetch_assoc())
     {
-      if($user['is_deleted']== 0)
+      if($admin['is_deleted']== 0)
       {
         echo "<tr>
-        <th scope='row'>$user[user_id]</th>
-        <td>$user[user_first_name]</td>
-        <td>$user[user_last_name]</td>
-        <td>$user[user_email]</td>
-        <td>$user[phone_num]</td>
-        <td>$user[user_password]</td>
-        <td>$user[age]</td>
-        <td>$user[gender]</td>
+        <th scope='row'>$admin[id]</th>
+        <td>$admin[email]</td>
+       
         <td> ";
-        // echo '<a href="read.php?id='. $row['id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-        echo '<a href="../profile_page/user_profile.php?id='. $user['user_id'] .'"<button  class="btn  btn-sm"><i class="fa-solid fa-eye"></i>Show</button></a>';
-        echo '<a href="user_update.php?id='. $user['user_id'] .'"<button  class="btn  btn-sm"><i class="fa-solid fa-pen-to-square"></i>Update</button></a>';
-        echo '<a href="user_delete.php?id='. $user['user_id'] .'"<button  class="btn  btn-sm"><i class="fa-solid fa-trash-can"></i>delete</button></a>';
-
-    //    echo  "<a href='update.php'><button class='btn  btn-sm'><i class='fa-solid fa-pen-to-square'></i>Update</button></a>";
-        // <a href='delete.php'><button class='btn  btn-sm'><i class='fa-solid fa-wrench'></i>delete</button></a>
-        // </td>
-      echo "</tr>";
-      }
+   
+        echo '<a href="admin_update.php?id='. $admin['id'] .'"<button  class="btn  btn-sm"><i class="fa-solid fa-pen-to-square"></i>Update</button></a>';
+        echo '<a href="admin_delete.php?id='. $admin['id'] .'"<button  class="btn  btn-sm"><i class="fa-solid fa-trash-can"></i>delete</button></a>';
       
+      echo "</tr>";
+       }
 
     };
     
@@ -150,6 +135,7 @@ include "../connection.php";
     ?>
   </tbody>
 </table>
-<div>
+  </div>
+  
 </body>
 </html>

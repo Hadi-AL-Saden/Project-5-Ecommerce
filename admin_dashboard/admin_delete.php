@@ -1,17 +1,18 @@
 <?php
-// Process delete operation after confirmation
+
 if(isset($_POST["id"]) && !empty($_POST["id"])){
-    // Include config file
+    
     require_once "../connection.php";
     
-    // Prepare a delete statement
-    $sql = "UPDATE user SET is_deleted=1 WHERE user_id = '$_GET[id]';";
+    $sql = "UPDATE user_admin SET is_deleted=1 WHERE id = '$_GET[id]';";
     $conn->query($sql);
 
+    echo'<script>
+setTimeout(() => {
+    window.location = "admin_dashboard.php";
+  }, "2000")
 
-    header("Location:./user_dashboard.php");
-    
-
+</script>';
 
 
 }
@@ -39,10 +40,10 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     <form action="" method="post">
                         <div class="alert alert-danger">
                             <input type="hidden" name="id" value="<?php echo trim($_GET["id"]); ?>"/>
-                            <p>Are you sure you want to delete this employee record?</p>
+                            <p>Are you sure you want to delete this admin ?</p>
                             <p>
                                 <input type="submit" value="Yes" class="btn btn-danger">
-                                <a href="dashboard.php" class="btn btn-secondary">No</a>
+                                <a href="admin_dashboard.php" class="btn btn-secondary">No</a>
                             </p>
                         </div>
                     </form>

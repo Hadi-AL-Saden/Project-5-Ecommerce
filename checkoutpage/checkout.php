@@ -15,16 +15,6 @@ $postcode=$_POST['postcode'];
 $phone_number=$_POST['phonenumber'];
 $email_address=$_POST['emailaddress'];
 $productid;
-// $product_id="1";
-// $checkoutData="SELECT product_id FROM checkout;";
-// $resultData=mysqli_query($conn,$checkoutData);
-// while($row=mysqli_fetch_assoc($resultData)){
-// 	$product_id=$row['product_id'];
-//   $productid=$product_id;
-
-// }
-
-
 $checkoutData="SELECT * FROM checkout;";
 $resultData=mysqli_query($conn,$checkoutData);
 while($row=mysqli_fetch_assoc($resultData)){
@@ -35,36 +25,24 @@ while($row=mysqli_fetch_assoc($resultData)){
 
 }
 echo $order_num;
-
-$sql5 = "INSERT INTO checkout (order_number,product_id,user_id,order_quantity, first_name, last_name, country, state, city, street_address, zipcode, phone, order_email)
-VALUES ('$order_num','$product_id','$user_id','$order_quan','$first_name', '$last_name', '$country','$state','$city','$street_address','$postcode','$phone_number','$email_address');";
-$resultplease=mysqli_query($conn,$sql5);
-if(!$sql5)
-echo("Error description: " . mysqli_error($conn));
-
-//$sql7 = "DELETE FROM checkout WHERE first_name = '';";
-
-
-//$delete_temp = mysqli_query($conn,$sql7);
-header("location:../billPage/billPage.php");
-
-
-//
 $sqlBill = "SELECT billing_number FROM billing_history";
     $queryBill = mysqli_query($conn, $sqlBill);
     $row1 = mysqli_fetch_assoc($queryBill);
     $resultcheck1 = mysqli_num_rows($queryBill);
 
     $num = $resultcheck1 + 1;
-
-    // echo "$num / $id / $total";
-
+    
+$sql5 = "INSERT INTO checkout (order_number,product_id,bill_id,user_id,order_quantity, first_name, last_name, country, state, city, street_address, zipcode, phone, order_email)
+VALUES ('$order_num','$product_id','$num','$user_id','$order_quan','$first_name', '$last_name', '$country','$state','$city','$street_address','$postcode','$phone_number','$email_address');";
+$resultplease=mysqli_query($conn,$sql5);
+if(!$sql5)
+    echo("Error description: " . mysqli_error($conn));
+    header("location:../billPage/billPage.php");
     $_SESSION["bill_id"] = $num;
     $sqlBill = "INSERT INTO billing_history(billing_number, user_id) VALUES('$num', '$user_id');";
     $run2 = mysqli_query($conn, $sqlBill);
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,7 +69,7 @@ $sqlBill = "SELECT billing_number FROM billing_history";
 <body>
 <nav class="navbar navbar-expand-lg ">
         <div class="container">
-        <a class="navbar-brand" href="#"><img src="../img/projectimg/logo.png" width="125px" height="auto"alt=""></a>
+        <a class="navbar-brand" href="#"><img src="../img/projectimg/logo.png" width="150px" height="auto" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation" >
@@ -102,24 +80,33 @@ $sqlBill = "SELECT billing_number FROM billing_history";
                     <li class="nav-item">
                         <a class="nav-link active" href="../index.php">Home</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            SHOP
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../ProductsPage/Dress.php">Dress</a></li>
+                            <li><a class="dropdown-item" href="../ProductsPage/Suit.php">Suits</a></li>
+                            <li><a class="dropdown-item" href="../ProductsPage/Accessories.php">Accessories</a></li>
+                            <li><a class="dropdown-item" href="../ProductsPage/Men_shoes.php">Men Shoes</a></li>
+                            <li><a class="dropdown-item" href="../ProductsPage/Women_shoes.php">Women Shoes</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="../index.php#discount">Our discount</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../about us/about_us.php"> About us</a>
                     </li>
-                    
-                   
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            CATEGORIES
+                    <li class="nav-item ">
+                        <a class="nav-link" href="../index.php#contact">
+                            Contact us
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="../ProductsPage/Dress.php">Dress</a></li>
-                          <li><a class="dropdown-item" href="../ProductsPage/Suit.php">Suits</a></li>
-                          <li><a class="dropdown-item" href="../ProductsPage/Accessories.php">Accessories</a></li>
-                          <li><a class="dropdown-item" href="../ProductsPage/Men_shoes.php">Men Shoes</a></li>
-                          <li><a class="dropdown-item" href="../ProductsPage/Women_shoes.php">Women Shoes</a></li>
-                         
-                        </ul>
-                      </li>
+    
+                    </li>
+
                     
                 </ul>
                 <form action="" method="post">
@@ -127,8 +114,6 @@ $sqlBill = "SELECT billing_number FROM billing_history";
                     <!-- profile icon/login/register -->
                     
                 <?php
-                
-        
                           $check=0;
                         
                           if(isset($_SESSION["userID"])){
@@ -146,7 +131,7 @@ $sqlBill = "SELECT billing_number FROM billing_history";
                                
                                ?>
                                <form action="" method='post'>
-                           <li class="nav_item"><input class="nav-link" type="submit" name="logout" value=" Logout " style="border:none; background-color: white;">
+                           <li class="nav_item"><input class="nav-link" type="submit" name="logout" value=" Logout " style="border:none; background-color: white; cursor:pointer">
                                 </li>
                                    </form>
                                  
@@ -193,32 +178,27 @@ $sqlBill = "SELECT billing_number FROM billing_history";
         </div>
     </nav>
     
-  
+  <div class="container">
 	<div class="row">
-		<div class="col-md-5 container bg-default">
+		<div class="col-md-5 col-lg-7 bg-default">
 			<h1 class="my-4">
                 Checkout
         	</h1>
-        	<hr style="background-color: rgba(3, 50, 239, 0.804); height:3px">
+        	<hr style="background-color: #570A57; height:3px">
 			<h4 class="my-4">
 				Billing details
 			</h4>
+            <h6 style="margin-bottom:70px">Please fill all your information to complete the purchase process:</h6>
 			<form action="" method="post">
 				<div class="form-row">
 					<div class="col-md-6 form-group">
 						<label for="firstname">First Name</label>
-						<input type="text" class="form-control" name="fname" id="firstname" placeholder="First Name">
-						<div class="invalid-feedback">
-							Valid first name is required.
-						</div>
+						<input type="text" class="form-control" name="fname" id="firstname" placeholder="First Name" required>
 					</div>
 
 					<div class="col-md-6 form-group">
 						<label for="lastname">Last Name</label>
-						<input type="text" class="form-control" name="lname" id="lastname" placeholder="Last Name">
-						<div class="invalid-feedback">
-							Valid last name is required.
-						</div>
+						<input type="text" class="form-control" name="lname" id="lastname" placeholder="Last Name" required>
 					</div>
 				</div>
 
@@ -233,32 +213,30 @@ $sqlBill = "SELECT billing_number FROM billing_history";
                 <input type="text" class="form-control" name="city" id="city" placeholder="city" required>
               </div>
 
+              <div class="form-group">
+					<label for="state">State
+					</label>
+					<input type="text" class="form-control" name="state" id="state" placeholder="state" required>
+				</div>
 
 				<div class="form-group">
 					<label for="adress"> Street address</label>
 					<input type="text" class="form-control"  name="street" id="adress" placeholder="1234 Main Street" required>
-					<div class="invalid-feedback">
-						Please enter your shipping address.
-					</div>
+					
 				</div>
 
-				<div class="form-group">
-					<label for="state">State
-						<span class="text-muted">(Optional)</span>
-					</label>
-					<input type="text" class="form-control" name="state" id="state" placeholder="state">
-				</div>
+				
 
                 <div class="form-group">
 					<label for="postcode">Postcode
 					</label>
-					<input type="text" class="form-control" name="postcode" id="postcode" placeholder="postcode">
+					<input type="text" class="form-control" name="postcode" id="postcode" placeholder="postcode" required>
 				</div>
 
                 <div class="form-group">
 					<label for="tel">Phone Number
 					</label>
-					<input type="tel" class="form-control" name="phonenumber" id="tel" placeholder="000-0000-000">
+					<input type="tel" class="form-control" name="phonenumber" id="tel" placeholder="000-0000-000" required>
 				</div>
 
                 
@@ -270,8 +248,8 @@ $sqlBill = "SELECT billing_number FROM billing_history";
 		</div>
 
 	
-		<div class="col-md-5 col-lg-3 col-xl-3 offset-lg-1 offset-xl-2 container totalcard ">
-      <div class="p-3" style="border:1px solid blue ">
+		<div class="col-md-5 col-lg-4 totalcard" style="margin-left: 95px;">
+      <div class="p-3" style="border:1px solid #570A57 ">
         <h2 class="fw-bold">Your order</h2>
         <div class="d-flex justify-content-between mt-2">
           <h4>Product</h4> <h4>Subtotal</h4>
@@ -289,8 +267,8 @@ $sqlBill = "SELECT billing_number FROM billing_history";
 				$itemprice=$row['order_price'] * $row['order_quantity'];
 			
 				echo  "<div class='d-flex justify-content-between mt-2'>";
-				echo "<span>".'$'.$items. "</span>";
-				echo "<span>".'$'.$itemprice. "</span>";
+				echo "<span>".$items. "</span>";
+				echo "<span>".$itemprice. " JOD</span>";
 			
 			
 			  echo "</div>";
@@ -310,20 +288,22 @@ $sqlBill = "SELECT billing_number FROM billing_history";
 // 	while($row1=mysqli_fetch_assoc($result1)){
 
 // 	}
-// }
+//class="text-success" }
 	?>
 		<hr>
         <div class="d-flex justify-content-between mt-2">
-          <span>Total </span> <span class="text-success"><?php echo $_SESSION['total'].'$'?></span>
+          <span>Total </span> <span style="color:#570A57;"><?php echo $_SESSION['total'].' JOD'?></span>
         </div>
 		<hr class="mb-4">
 		<h6 class="fw-bold">Cash on delivery</h6>
 		<p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</p>
-		<button class="btn btn-primary bt-lg btn-block" type="submit" name="submit">PLACE ORDER</button>
+        <br>
+		<button class="btn btn-primary bt-lg btn-block" style="background-color:#570A57; border-color:#570A57;" type="submit" name="submit">PLACE ORDER</button>
       </div>
     </div>
   </div>
   </form>
+</div>
 </div>
 </body>
 </html>

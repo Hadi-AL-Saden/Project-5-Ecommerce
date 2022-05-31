@@ -1,36 +1,40 @@
 <?php
 include "../connection.php";
-$get_data = "SELECT * FROM category WHERE id= $_GET[id]";
+$get_data = "SELECT * FROM user_admin WHERE id= $_GET[id]";
 $stmt= $conn->query($get_data);
-$category_data = $stmt->fetch_assoc();
+$admin_data = $stmt->fetch_assoc();
 
 if(isset($_POST['submit']))
 {
     
-    $category_name = $_POST['category_name'];
+    $admin_email = $_POST['email'];
     
    
 
-   $update_data = "UPDATE category SET category_name='$category_name' WHERE id=$_GET[id];";
+   $update_data = "UPDATE user_admin SET email='$admin_email' WHERE id=$_GET[id];";
    $conn->query($update_data);
-   echo'<script>
-setTimeout(() => {
-    window.location = "category_dashboard.php";
-  }, "10")
 
-</script>';
+   
+   echo'<script>
+   setTimeout(() => {
+       window.location = "admin_dashboard.php";
+     }, "1000")
+   
+   </script>';
 
 }
 
 ?>
 <!DOCTYPE html>
 <html>
-  <title>Update</title>
+  <title>update admin</title>
   <head> <script src="https://kit.fontawesome.com/f32d43040b.js" crossorigin="anonymous"></script>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/f32d43040b.js" crossorigin="anonymous"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
 <link rel="stylesheet" href="user_dashboard.css?v=<?php echo time(); ?>">
 <link rel="stylesheet" href="dashboard.css?v=<?php echo time(); ?>">
@@ -76,6 +80,7 @@ setTimeout(() => {
       opacity: 0.8;
       }
       .formcontainer {
+        
       text-align: center;
       margin: 24px 50px 12px;
       }
@@ -108,19 +113,23 @@ setTimeout(() => {
     </style>
   </head>
   <body>
+    
     <form action="" method="post">
-      <h1>Upate Category</h1>
       
-      <div class="formcontainer">
+     
+
+      <h1>Upate Employee</h1>
+     
+      <div class="formcontainer ">
       <div class="container">
-        <label for="uname"><strong>category name</strong></label>
-        <input type="text" placeholder="category_name" name="category_name"  value =<?php echo $category_data['category_name']; ?>>
+        <label for="uname"><strong>admin email</strong></label>
+        <input type="text" placeholder="email" name="email"  value =<?php echo $admin_data['email']; ?>>
         
       </div>   
-      <input type="submit" name="submit" class="btn butt btn1" value="Submit">
+      <input type="submit" name="submit"  class="butt btn btn1" value="submit">
       
     </form>
 
-    <!-- <a href="category_dashboard.php">back to dashboard</a> -->
+    <!-- <a href="admin_dashboard.php">back to dashboard</a> -->
   </body>
 </html>

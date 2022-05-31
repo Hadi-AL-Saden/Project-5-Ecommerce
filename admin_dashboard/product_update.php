@@ -8,6 +8,7 @@ if(isset($_POST['submit']))
 {
     $id=$_POST['product_id'];
     $product_name = $_POST['product_name'];
+    $product_category=$_POST['product_category'];
     $product_price=$_POST['product_price'];
    $product_color=$_POST['product_color'];
    $product_size=$_POST['product_size'];
@@ -15,9 +16,16 @@ if(isset($_POST['submit']))
    $product_image=$_POST['product_image'];
    
 
-   $update_data = "UPDATE products SET product_name='$product_name',product_price='$product_price',product_color='$product_color',product_size='$product_size',product_description='$product_description',product_image='$product_image' WHERE product_id=$_GET[id];";
+   $update_data = "UPDATE products SET product_name='$product_name',product_category='$product_category',product_price='$product_price',product_color='$product_color',product_size='$product_size',product_description='$product_description',product_image='$product_image' WHERE product_id=$_GET[id];";
    $conn->query($update_data);
-   header("Refresh:0");
+   echo'<script>
+   setTimeout(() => {
+       window.location = "product_dashboard.php";
+     }, "10")
+   
+   </script>';
+
+   
 }
 
 ?>
@@ -28,6 +36,10 @@ if(isset($_POST['submit']))
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+<link rel="stylesheet" href="user_dashboard.css?v=<?php echo time(); ?>">
+<link rel="stylesheet" href="dashboard.css?v=<?php echo time(); ?>">
     <style>
       html, body {
       display: flex;
@@ -89,13 +101,24 @@ if(isset($_POST['submit']))
       float: none;
       }
     }
+    .btn1
+    {
+      float:left;
+    }
+    .label 
+    {
+      display:inline;
+      font-size: x-large;
+    }
+    
+    
     </style>
   </head>
   <body>
     <form action="" method="post">
-      <h1>Upate Employee</h1>
+      <h1>Update Product</h1>
       <div class="icon">
-        <i class="fa-solid fa-pen-to-square"></i>
+        
       </div>
       <div class="formcontainer">
       <div class="container">
@@ -103,6 +126,9 @@ if(isset($_POST['submit']))
         <input type="text" placeholder="product_id" name="product_id"  value =<?php echo $product_data['product_id']; ?> readonly   >
         <label for="mail"><strong>product name</strong></label>
         <input type="text" placeholder="product name" name="product_name" value= <?php echo $product_data['product_name']; ?> >
+        <label for="category"><strong>product category</strong></label>
+        <input type="text" placeholder="product name" name="product_category" value= <?php echo $product_data['product_category']; ?> >
+
         <label for="psw"><strong>Product price</strong></label>
         <input type="text" placeholder="Productprice" name="product_price" value=<?php echo $product_data['product_price']; ?>>
         <label for="psw"><strong>Product color</strong></label>
@@ -114,10 +140,10 @@ if(isset($_POST['submit']))
         <label for="psw"><strong>product image</strong></label>
         <input type="text" placeholder="product image" name="product_image" value=  <?php echo $product_data['product_image']; ?>>
       </div>
-      <input type="submit" name="submit" value="submit">
+      <input type="submit" name="submit" class="btn butt btn1" value="Submit">
       
     </form>
 
-    <a href="product_dashboard.php">back to dashboard</a>
+    <!-- <a href="product_dashboard.php">back to dashboard</a> -->
   </body>
 </html>

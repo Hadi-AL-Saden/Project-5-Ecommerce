@@ -34,36 +34,51 @@ h2{
     font-weight: 300;
 }
 
-.btn-sunny {
+/* .btn-sunny {
     height: 50px;
     width: 20%;
     color: #fff;
     background-color: #f4ad49;
     border-bottom:2px solid #c38a3a;
-    }
-.btn-sunny:hover, .btn-sky.active:focus, .btn-sunny:focus, .open>.dropdown-toggle.btn-sunny {
+    } */
+/* .btn-sunny:hover, .btn-sky.active:focus, .btn-sunny:focus, .open>.dropdown-toggle.btn-sunny {
     color: #fff;
     background-color: #f5b75f;
     border-bottom:2px solid #c4924c;
     outline: none;
-    }
+    } */
     
     
-    .btn-sunny:active, .btn-sunny.active {
+    /* .btn-sunny:active, .btn-sunny.active {
     color: #fff;
     background-color: #d69840;
     border-top:2px solid #ab7a33;
     margin-top: 2px;
-    }
-    .btn:focus,
+    } */
+    /* .btn:focus,
 .btn:active:focus,
 .btn.active:focus {
     outline: none;
     outline-offset: 0px;
-}
+} */
 
-.btn-sunny a {color:rgb(255, 255, 255);}
-a:hover {text-decoration:none; color:rgb(45, 35, 2);}
-
+/* .btn-sunny a {color:rgb(255, 255, 255);} */
+/* a:hover {text-decoration:none; color:rgb(45, 35, 2);} */
+.butt{
+    background-color: #570A57;
+    color: white;
+    padding: 10px 50px;
+    
+   }
+   .butt a{
+     color:white;
+   }
+   .butt:hover{
+    background-color: #570A57;
+    color:white;
+   }
+   .butt a:hover{
+    color:white;
+  }
 
 
